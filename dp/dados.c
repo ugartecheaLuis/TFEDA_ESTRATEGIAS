@@ -26,7 +26,7 @@ int main() {
     int cantidad_dados = 3;
     int numero = 10;
     int res = sumaDados(cantidad_dados, numero);
-    printf("El número de formas de obtener la suma %d con %d dados es: %d\n", numero, cantidad_dados, res);
+    printf("El numero de formas de obtener la suma %d con %d dados es: %d\n", numero, cantidad_dados, res);
 
     return 0;
 }
