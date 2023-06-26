@@ -1,12 +1,15 @@
 #include <stdio.h>
 
-struct Elemento {
+struct elemento {
     int valor;
     int peso;
     double relacion;
 };
 
-void mochila_greedy(struct Elemento elementos[], int num_elementos, int capacidad) {
+typedef struct elemento elemento;
+
+
+void mochila_greedy(elemento elementos[], int num_elementos, int capacidad) {
     // Calcular la relación valor/peso para cada elemento
     for (int i = 0; i < num_elementos; i++) {
         elementos[i].relacion = (double)elementos[i].valor / elementos[i].peso;
@@ -16,7 +19,7 @@ void mochila_greedy(struct Elemento elementos[], int num_elementos, int capacida
     for (int i = 0; i < num_elementos - 1; i++) {
         for (int j = 0; j < num_elementos - i - 1; j++) {
             if (elementos[j].relacion < elementos[j + 1].relacion) {
-                struct Elemento temp = elementos[j];
+                elemento temp = elementos[j];
                 elementos[j] = elementos[j + 1];
                 elementos[j + 1] = temp;
             }
@@ -42,7 +45,7 @@ void mochila_greedy(struct Elemento elementos[], int num_elementos, int capacida
 }
 
 int main() {
-    struct Elemento elementos[] = {
+    struct elemento elementos[] = {
         {60, 10},
         {100, 20},
         {120, 30}
