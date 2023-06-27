@@ -31,20 +31,18 @@ void actividades(act acts[], int num_acts) {
 
 int main() {
     act acts[] = {
-        {1, 4},
-        {3, 5},
-        {0, 6},
-        {5, 7},
-        {3, 8},
-        {5, 9},
-        {6, 10},
-        {8, 11},
-        {8, 12},
-        {2, 13},
-        {12, 14}
+        {4, 5},
+        {5, 8},
+        {6, 7},
+        {5, 10},
+        {6, 7},
+        {9, 12},
+        {14, 16},
+        {1, 6},
+        {15, 21}
     };
-    int num_actividades = sizeof(acts) / sizeof(acts[0]);
-
+    
+    int num_actividades = sizeof(acts) / sizeof(acts[0]); //esto es para saber la cantidad de actividades que hay
     actividades (acts, num_actividades);
 
     return 0;
