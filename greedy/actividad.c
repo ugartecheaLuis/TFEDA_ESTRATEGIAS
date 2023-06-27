@@ -7,10 +7,10 @@ struct actividad {
 
 typedef struct actividad act;
 
-void actividades(act acts[], int num_actividades) {
+void actividades(act acts[], int num_acts) {
     // Ordenar las actividades en orden ascendente según el tiempo de finalización (usando el algoritmo de burbuja)
-    for (int i = 0; i < num_actividades - 1; i++) {
-        for (int j = 0; j < num_actividades - i - 1; j++) {
+    for (int i = 0; i < num_acts - 1; i++) {
+        for (int j = 0; j < num_acts - i - 1; j++) {
             if (acts[j].fin > acts[j + 1].fin) {
                 act temp = acts[j];
                 acts[j] = acts[j + 1];
@@ -22,12 +22,12 @@ void actividades(act acts[], int num_actividades) {
     printf("Actividades seleccionadas: ");
     printf("(%d, %d) ", acts[0].inicio, acts[0].fin);
 
-    int ultima_actividad = 0;
+    int ultima_act = 0;
 
-    for (int i = 1; i < num_actividades; i++) {
-        if (acts[i].inicio >= acts[ultima_actividad].fin) {
+    for (int i = 1; i < num_acts; i++) {
+        if (acts[i].inicio >= acts[ultima_act].fin) {
             printf("(%d, %d) ", acts[i].inicio, acts[i].fin);
-            ultima_actividad = i;
+            ultima_act = i;
         }
     }
 }
