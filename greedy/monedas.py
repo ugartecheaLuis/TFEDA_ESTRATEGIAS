@@ -9,4 +9,5 @@ def cambio(cantidad, denominaciones):
         print (denominaciones)
     return resultado
 
-print (cambio(4893, [500, 200, 100, 50, 20, 5, 1]))
+print (cambio(4893, [1000, 250, 100, 50, 20, 5, 2, 1]))
+
